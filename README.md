@@ -20,6 +20,33 @@ npm install --save ngx-editor.md
 
 **TypeScript**
 
+**app.module.ts**
+
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+
+import {AppComponent} from './app.component';
+import {EditorMdModule} from 'ngx-editor.md';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    EditorMdModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+
+```
+
+**component.ts**
+
 ```typescript
 import {Component} from '@angular/core';
 import {EditorConfig} from 'ngx-editor.md';
@@ -38,7 +65,6 @@ export class AppComponent {
     this.editorInstance = editorInstance;
   }
 }
-
 
 ```
 
