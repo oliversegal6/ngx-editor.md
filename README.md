@@ -1,6 +1,6 @@
 # NgxEditor.Md
 
- Angualr4 directive for markdown editor, wrapper by [edititor.md](https://github.com/pandao/editor.md) ，origin project [demo](https://pandao.github.io/editor.md/)
+ Angualr4 directive for markdown editor, wrapper by [edititor.md](https://github.com/pandao/editor.md) ，original project [demo](https://pandao.github.io/editor.md/)
 
 
 
@@ -16,7 +16,7 @@ npm install --save ngx-editor.md
 <div id="ed" (onComplete)="onComplate($event)" appEditorMd [editorConfig]="conf"></div>
 ```
 
- use the `appEditorMd` directive on the div element and must be set `id`  ,and then you can setting the editor config use `[editorConfig]` ,the directive will emmit the editor instance by `(onComplete)` when editor create complete。
+ Use the `appEditorMd` directive on the div element and must be set `id`  ,and then you can setting the editor config use `[editorConfig]` ,the directive will emmit the editor instance by `(onComplete)` when editor create complete。
 
 **TypeScript**
 
@@ -103,6 +103,9 @@ export class EditorConfig {
 
 # Screenshot
 
-
-
 ![screentshot](demo.png)
+
+# APIS
+
+Please go to the original project , [click me](https://pandao.github.io/editor.md/examples/index.html)
+
