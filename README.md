@@ -1,27 +1,82 @@
 # NgxEditor.Md
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+ Angualr4 directive for markdown editor, wrapper by [edititor.md](https://github.com/pandao/editor.md) ，origin project [demo](https://pandao.github.io/editor.md/)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm install --save ngx-editor.md
 
-## Build
+# Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+**html**
 
-## Running unit tests
+```html
+<div id="ed" (onComplete)="onComplate($event)" appEditorMd [editorConfig]="conf"></div>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ use the `appEditorMd` directive on the div element and must be set `id`  ,and then you can setting the editor config use `[editorConfig]` ,the directive will emmit the editor instance by `(onComplete)` when editor create complete。
 
-## Running end-to-end tests
+**TypeScript**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+import {Component} from '@angular/core';
+import {EditorConfig} from 'ngx-editor.md';
 
-## Further help
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+  conf = new EditorConfig();
+  editorInstance: any;
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  onComplate(editorInstance: any) {
+    this.editorInstance = editorInstance;
+  }
+}
+
+
+```
+
+## EditorConfig
+
+**default settings**
+
+```typescript
+export class EditorConfig {
+  public width = '100%';
+  public height = '400';
+  public path = 'assets/lib/';
+  public codeFold: true;
+  public searchReplace = true;
+  public toolbar = true;
+  public emoji = true;
+  public taskList = true;
+  public tex = true;
+  public readOnly = false;
+  public tocm = true;
+  public watch = true;
+  public previewCodeHighlight = true;
+  public saveHTMLToTextarea = true;
+  public markdown = '';
+  public flowChart = true;
+  public syncScrolling = true;
+  public sequenceDiagram = true;
+  public imageUpload = true;
+  public imageFormats = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'webp'];
+  public imageUploadURL = '';
+
+  constructor() {
+  }
+}
+```
+
+# Screenshot
+
+
+
+![screentshot](demo.png)

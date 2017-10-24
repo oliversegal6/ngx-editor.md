@@ -5,4 +5,3 @@ interface NodeModule {
   id: string;
 }
 
-declare var editormd: any;
